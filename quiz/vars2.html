@@ -1,16 +1,20 @@
 <html>
-    <head>
-        <script>
-            // change the script such that i=0,1,2,3,4 is logged in the console
-            for (var i = 0; i < 5; i++) {
-                // setTimeout executes the function after 5 ms
-                setTimeout(function() {
-                    console.log(i);
-                }, 5);
-            }
-        </script>
-    </head>
-    <body>
-        <h1> A Web Page </h1>
-    </body>
+
+<head>
+    <script>
+        // change the script such that i=0,1,2,3,4 is logged in the console
+        for (let i = 0; i < 5; i++) { // This will print values from 0 to 4.
+            // setTimeout executes the function after 5 ms
+            setTimeout(function () { // When using var, the function would be executed after the main thread (main for loop execution). To prevent this, use let (let is not accessible outside the block). JavaScript will access the current value of i in the loop and print it.
+                console.log(i); // If it were var, i would be updated globally. If it were let, it would be updated in every loop iteration.
+            }, 5);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1> A Web Page </h1>
+</body>
+
 </html>
