@@ -12,7 +12,7 @@ window.onload = function hideEmail() {
         if (email.match(/^[a-z0-9_]+@(.+\.)*northeastern.edu$/)) {
             console.log(email);
             const listItem = document.createElement('li');
-            listItem.textContent = email.slice(0, email.indexOf('@')) + email.slice('@', email.replace('/./g', '*'));
+            listItem.textContent = email.slice(0, email.indexOf('@')) + email.slice(email.indexOf('@') + 1).replace(/./g, '*');
             list.appendChild(listItem);
         }
         if (isValid(email)) {
